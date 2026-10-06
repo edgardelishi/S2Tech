@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S2Tech – Anteprima nuovo sito</title>
+<meta name="description" content="S2Tech progetta, collauda e fornisce celle di carico, trasduttori di pressione, tensiometri e sensori per ascensori per l'industria e la ricerca. Milano, dal 2010.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16212B; --steel:#4D5A66; --tick:#8A96A0; --line:#D5DBE0; --field:#B9C2CA;
+  --ground:#F3F5F6; --paper:#FFFFFF; --blue:#1D5AA6; --blue-dark:#123F78; --tint:#EAF1FA;
+  --signal:#F2B134; --foot:#C9D2DA; --foot-line:#34414D;
+  --pad:clamp(20px,8.3vw,120px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--ground);font-size:17px;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:var(--blue);text-decoration:none}
+a:hover{color:var(--blue-dark);text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+h1,h2,h3{margin:0;font-weight:800;font-stretch:112%;letter-spacing:-.02em;line-height:1.04}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{padding-inline:var(--pad)}
+.muted{color:var(--steel)}
+.num{font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.ph{background-color:#E2E7EB;background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(22,33,43,.06) 14px 15px);border-radius:4px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:var(--steel);font-size:14px}
+.pic{background:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:contain}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:4px;font:inherit;font-weight:600;font-size:17px;cursor:pointer;border:0;text-decoration:none;text-align:center}
+.btn:hover{text-decoration:none}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-dark);color:#fff}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-white{background:#fff;color:var(--ink)}.btn-white:hover{background:var(--ground);color:var(--ink)}
+
+.topbar{background:var(--ink);color:var(--foot);font-size:14px;display:flex;justify-content:space-between;align-items:center;min-height:40px;gap:16px}
+.topbar a{color:var(--foot)}.topbar strong a,.topbar a.on{color:#fff;font-weight:600}
+.topbar nav{display:flex;gap:24px}
+
+.header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:80px}
+.logo{color:var(--ink);font-size:30px;font-weight:800;font-stretch:125%;letter-spacing:-.02em}
+.logo:hover{text-decoration:none;color:var(--ink)}
+.mainnav{display:flex;gap:32px;font-weight:500}
+.mainnav a{color:var(--ink)}.mainnav a[aria-current="page"]{color:var(--blue);font-weight:700}
+.head-tools{display:flex;align-items:center;gap:14px}
+.search-form{position:relative}
+.search{width:230px;min-height:44px;padding:0 14px;border:1px solid var(--field);border-radius:4px;font:inherit;font-size:15px;background:var(--ground)}
+.quote-link{min-height:44px;display:flex;align-items:center;gap:10px;padding:0 16px;border:1.5px solid var(--ink);border-radius:4px;color:var(--ink);font-weight:600;font-size:15px;white-space:nowrap}
+.quote-link:hover{text-decoration:none;background:var(--ink);color:#fff}
+.badge{background:var(--ink);color:#fff;border-radius:12px;padding:1px 9px;font-size:13px}
+.quote-link:hover .badge{background:#fff;color:var(--ink)}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:transparent;color:var(--ink);cursor:pointer;align-items:center;justify-content:center}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:64px;align-items:end;padding-block:88px 72px}
+.hero h1{font-size:clamp(40px,5.3vw,76px);line-height:1}
+.hero-copy{display:flex;flex-direction:column;gap:26px}
+.hero-copy p{font-size:clamp(17px,1.5vw,21px);color:var(--steel);max-width:620px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;padding-top:6px}
+.hero-visual{height:440px;border:1px solid var(--line);padding:40px}
+
+.scale{position:relative;height:26px;border-bottom:2px solid var(--ink);background-color:var(--ground);background-image:linear-gradient(90deg,var(--ink) 1px,transparent 1px),linear-gradient(90deg,var(--tick) 1px,transparent 1px);background-size:60px 26px,12px 12px;background-repeat:repeat-x}
+.scale::after{content:"";position:absolute;left:59.5%;top:-14px;width:4px;height:42px;background:var(--signal)}
+
+.section{padding-block:96px}
+.white{background:var(--paper)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(30px,3.4vw,48px)}
+.sec-head p{max-width:440px;color:var(--steel)}
+
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.tile{display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:30px;min-height:230px;border:1px solid var(--line);border-top:4px solid var(--ink);border-radius:4px;color:var(--ink);background:var(--paper);transition:border-color .15s}
+.tile:hover{text-decoration:none;color:var(--ink);border-top-color:var(--blue)}
+.tile h3{font-size:27px;font-stretch:108%;letter-spacing:-.01em;margin-bottom:10px}
+.tile p{color:var(--steel)}
+.tile-foot{display:flex;justify-content:space-between;font-size:16px}
+.tile-foot b{font-variant-numeric:tabular-nums}
+.tile-foot span{color:var(--blue);font-weight:600}
+
+.creds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;padding-block:48px;border-block:1px solid var(--line)}
+.creds b{display:block;font-size:26px;font-weight:800;font-stretch:112%;margin-bottom:4px}
+.creds span{color:var(--steel);font-size:16px}
+
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:2px solid var(--ink);margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{padding:24px 24px 0 0;counter-increment:s}
+.steps li::before{content:counter(s);display:block;font-size:40px;font-weight:800;font-stretch:112%;color:var(--blue);margin-bottom:8px}
+.steps b{display:block;font-size:20px;margin-bottom:8px}
+.steps span{color:var(--steel);font-size:16px}
+
+.apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.app{display:flex;flex-direction:column;gap:16px;color:var(--ink)}
+.app:hover{text-decoration:none;color:var(--ink)}
+.app:hover h3{color:var(--blue)}
+.app .ph{height:240px}
+.app h3{font-size:22px;font-stretch:106%;letter-spacing:-.01em}
+.app p{color:var(--steel);font-size:16px}
+
+.featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.feat{display:flex;gap:28px;padding:30px;background:var(--paper);border:1px solid var(--line);border-radius:4px;color:var(--ink)}
+.feat:hover{text-decoration:none;color:var(--ink);border-color:var(--ink)}
+.feat .pic,.feat .ph{width:220px;height:240px;flex-shrink:0}
+.feat div.txt{display:flex;flex-direction:column;justify-content:center;gap:12px}
+.feat h3{font-size:28px;font-stretch:110%;line-height:1.1}
+.feat .go{color:var(--blue);font-weight:600}
+
+.support{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
+.support a{display:block;color:var(--ink);border-top:2px solid var(--ink);padding-top:20px}
+.support a:hover{text-decoration:none;border-top-color:var(--blue)}
+.support b{display:block;font-size:22px;margin-bottom:8px}
+.support span{color:var(--steel);font-size:16px}
+
+.cta-band{background:var(--blue);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:48px;padding-block:80px}
+.cta-band h2{font-size:clamp(30px,3.4vw,48px);margin-bottom:12px}
+.cta-band p{color:#E3ECF7;font-size:clamp(17px,1.4vw,20px);max-width:720px}
+
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:64px}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:15px;font-weight:600}
+.field input,.field textarea,.field select{min-height:48px;padding:10px 14px;border:1px solid var(--field);border-radius:4px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+.field textarea{min-height:130px;resize:vertical}
+.quote-box{background:var(--tint);border-radius:4px;padding:18px 20px;margin-top:24px}
+.quote-box ul{margin:8px 0 0;padding:0;list-style:none}
+.quote-box li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #CFDDF0;font-size:15px}
+.quote-box button{border:0;background:none;color:var(--blue);font:inherit;font-size:14px;cursor:pointer;text-decoration:underline;padding:0}
+
+footer{background:var(--ink);color:var(--foot);font-size:15px;padding-block:72px 40px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px;margin-bottom:56px}
+.foot-grid h4{margin:0 0 12px;color:#fff;font-size:16px}
+.foot-grid a{display:block;color:var(--foot);margin-bottom:8px}
+.foot-grid a:hover{color:#fff}
+.foot-logo{font-size:26px;font-weight:800;font-stretch:125%;color:#fff;margin-bottom:10px}
+.foot-bottom{display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid var(--foot-line);padding-top:24px;font-size:14px}
+.foot-bottom a{color:var(--foot)}
+
+[data-page]{display:none}
+[data-page].active{display:block}
+
+.page-head{background:var(--paper);border-bottom:2px solid var(--ink);padding-block:36px 40px}
+.crumbs{font-size:15px;color:var(--steel);margin-bottom:18px}
+.page-head .row{display:flex;justify-content:space-between;align-items:flex-end;gap:48px}
+.page-head h1{font-size:clamp(40px,4.4vw,64px)}
+.page-head p{max-width:560px;color:var(--steel)}
+.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.cat-tabs a{min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border:1px solid var(--field);border-radius:22px;color:var(--ink);font-size:15px;font-weight:500}
+.cat-tabs a:hover{text-decoration:none;border-color:var(--ink)}
+.cat-tabs a[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.cat{display:grid;grid-template-columns:272px minmax(0,1fr);gap:48px;align-items:start;padding-block:48px 96px}
+.filters{display:flex;flex-direction:column;gap:28px;position:sticky;top:104px}
+.filters fieldset{border:0;margin:0;padding:24px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.filters fieldset:first-of-type{border-top:0;padding-top:0}
+.filters legend{font-size:18px;font-weight:700;padding:0;margin-bottom:10px}
+.check{display:flex;gap:12px;align-items:center;min-height:34px;font-size:16px;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--blue);margin:0;flex-shrink:0}
+.check span{margin-left:auto;color:var(--steel);font-variant-numeric:tabular-nums}
+.help-box{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:20px}
+.help-box b{display:block;margin-bottom:6px}
+.help-box p{font-size:15px;color:var(--steel);margin-bottom:8px}
+.results-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.results-bar .field{flex-direction:row;align-items:center;gap:10px}
+.results-bar label{font-weight:400;color:var(--steel)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column}
+.card .pic{height:210px;border-bottom:1px solid var(--line);border-radius:4px 4px 0 0;padding:20px}
+.card-body{padding:22px;display:flex;flex-direction:column;gap:12px;flex-grow:1}
+.card-type{font-size:14px;color:var(--steel)}
+.card h3{font-size:24px;font-stretch:110%}
+.card h3 a{color:var(--ink)}
+.specs{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px;margin:0}
+.specs dt{color:var(--steel)}.specs dd{margin:0;font-weight:600}
+.card-actions{display:flex;gap:10px;margin-top:auto;padding-top:8px}
+.card-actions .btn{flex:1;min-height:44px;padding:0 12px;font-size:15px}
+.empty{grid-column:1/-1;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:28px}
+
+.prod-top{background:var(--paper);border-bottom:1px solid var(--line);padding-block:32px 72px}
+.prod{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:64px}
+.gallery .main{height:480px;border:1px solid var(--line);padding:32px}
+.thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}
+.thumbs button{height:96px;border:1px solid var(--line);border-radius:4px;cursor:pointer;background:#fff;padding:8px}
+.thumbs button img{width:100%;height:100%;object-fit:contain}
+.thumbs button[aria-pressed="true"]{border:2px solid var(--ink)}
+.prod-info{display:flex;flex-direction:column;gap:24px}
+.prod-info h1{font-size:clamp(36px,3.9vw,56px)}
+.prod-info .lead{font-size:18px;color:var(--steel)}
+.highlights{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.highlights li{padding-left:22px;position:relative}
+.highlights li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--blue)}
+.keyspecs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:2px solid var(--ink)}
+.keyspecs div{padding:14px 16px 14px 0;border-bottom:1px solid var(--line)}
+.keyspecs div:nth-child(even){padding-left:16px}
+.keyspecs small{display:block;font-size:14px;color:var(--steel)}
+.keyspecs b{font-size:18px}
+.config{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.add-row{display:flex;gap:12px;align-items:flex-end}
+.add-row .field input{width:96px;min-height:56px}
+.add-row .btn{flex:1;min-height:56px}
+.added{background:var(--tint);border-radius:4px;padding:16px 20px}
+.downloads{display:flex;gap:24px;flex-wrap:wrap;font-weight:600}
+.tabs{display:flex;gap:4px;border-bottom:2px solid var(--ink);margin-bottom:32px;overflow-x:auto}
+.tabs button{min-height:52px;padding:0 20px;border:0;background:none;font:inherit;font-size:17px;font-weight:600;color:var(--steel);cursor:pointer;border-bottom:4px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--blue)}
+.tabpanel{max-width:900px}
+.tabpanel p+p{margin-top:14px}
+.spec-table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);font-size:16px}
+.spec-table th,.spec-table td{padding:13px 20px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.spec-table th{font-weight:400;color:var(--steel);width:45%}
+.spec-table td{font-weight:600}
+.spec-table tr:last-child th,.spec-table tr:last-child td{border-bottom:0}
+.drawing{background:#fff;border:1px solid var(--line);border-radius:4px;padding:24px}
+.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.rel a{display:flex;gap:18px;align-items:center;padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:4px;color:var(--ink)}
+.rel a:hover{text-decoration:none;border-color:var(--ink)}
+.rel .pic{width:88px;height:88px;flex-shrink:0;border:1px solid var(--line);padding:6px}
+.rel b{display:block;font-size:18px}.rel span{font-size:15px;color:var(--steel)}
+.note{font-size:14px;color:var(--steel)}
+
+@media (max-width:1180px){
+  .mainnav{gap:22px}.search{width:170px}
+  .tiles,.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .apps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:24px}
+  .featured{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .topbar nav a.hide-sm{display:none}
+  .search-form{display:none}
+  .menu-btn{display:inline-flex}
+  .mainnav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px var(--pad) 16px}
+  .mainnav.open{display:flex}
+  .mainnav a{min-height:52px;display:flex;align-items:center;border-bottom:1px solid var(--line);font-size:18px}
+  .quote-text{display:none}
+  .hero{grid-template-columns:1fr;gap:36px;padding-block:44px 40px}
+  .hero-visual{height:280px}
+  .sec-head,.page-head .row{flex-direction:column;align-items:flex-start;gap:14px}
+  .section{padding-block:56px}
+  .creds{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cta-band{flex-direction:column;align-items:flex-start;padding-block:56px}
+  .contact{grid-template-columns:1fr;gap:32px}
+  .cat{grid-template-columns:1fr}
+  .filters{position:static}
+  .prod{grid-template-columns:1fr;gap:36px}
+  .gallery .main{height:320px}
+  .rel{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .logo{font-size:24px}
+  .header{min-height:64px}
+  .tiles,.grid3,.apps,.steps,.support,.form,.foot-grid,.config{grid-template-columns:1fr}
+  .tile{min-height:0}
+  .feat{flex-direction:column}.feat .pic,.feat .ph{width:100%;height:200px}
+  .cta-row .btn{width:100%}
+  .add-row{flex-wrap:wrap}.add-row .btn{flex-basis:100%}
+  .topbar{font-size:13px}
+  .spec-table th,.spec-table td{padding:10px 12px;font-size:15px}
+}
+</style>
+</head>
+<body>
+<div style="background:#F2B134;color:#16212B;text-align:center;font-size:15px;font-weight:600;padding:10px 20px">Anteprima riservata per S2Tech, realizzata da Edgar Delishi</div>
+
+<div class="topbar wrap">
+  <div>Assistenza tecnica <strong><a href="tel:+39028910142">+39 02 89 101 42</a></strong></div>
+  <nav aria-label="Servizi">
+    <a href="#" class="hide-sm">Area riservata</a>
+    <a href="http://get.teamviewer.com/huhuxdd" class="hide-sm" target="_blank" rel="noopener">Assistenza remota</a>
+    <a href="#" class="on">IT</a>
+    <a href="#">EN</a>
+  </nav>
+</div>
+
+<header class="header wrap">
+  <a href="#home" class="logo" aria-label="S2Tech, homepage">S2Tech</a>
+  <nav class="mainnav" id="mainnav" aria-label="Principale">
+    <a href="#catalogo" data-nav="catalogo">Prodotti</a>
+    <a href="#applicazioni">Applicazioni</a>
+    <a href="#supporto">Supporto</a>
+    <a href="#azienda">Azienda</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <div class="head-tools">
+    <form class="search-form" id="searchForm" role="search">
+      <label for="search" class="sr">Cerca un prodotto</label>
+      <input id="search" class="search" type="search" placeholder="Cerca modello, es. 560QDT">
+    </form>
+    <a href="#contatti" class="quote-link" aria-label="Richiesta preventivo"><span class="quote-text">Richiesta preventivo</span> <span class="badge num" id="qcount">0</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainnav" aria-label="Apri menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== HOME ===================== -->
+<div data-page="home" class="active">
+
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <h1>Sensori e strumenti di misura, progettati e collaudati da noi.</h1>
+      <p>Celle di carico, trasduttori di pressione, tensiometri e sensori per ascensori per l'industria e la ricerca. Modelli standard o realizzati sulla tua applicazione.</p>
+      <div class="cta-row">
+        <a href="#catalogo" class="btn btn-primary">Sfoglia il catalogo</a>
+        <a href="#contatti" class="btn btn-outline">Parla con un tecnico</a>
+      </div>
+    </div>
+    <div class="pic hero-visual"><img src="https://www.s2tech.it/wp-content/uploads/2016/12/LT50t30.png" alt="Cella di carico a basso profilo LT50"></div>
+  </section>
+
+  <div class="scale" aria-hidden="true"></div>
+
+  <section class="section white wrap" aria-labelledby="h-misura">
+    <div class="sec-head">
+      <h2 id="h-misura">Cosa devi misurare?</h2>
+      <p>Parti dalla grandezza fisica: trovi i sensori adatti e gli strumenti per leggerne il segnale.</p>
+    </div>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section id="azienda" class="creds wrap" aria-label="Chi siamo">
+    <div><b>Dal 2010</b><span>Sensori e strumentazione per industria e ricerca scientifica</span></div>
+    <div><b>ISO 9001</b><span>Sistema di gestione qualità certificato</span></div>
+    <div><b>REACH e RoHS</b><span>Conformità dei materiali e policy sui conflict minerals</span></div>
+    <div><b>Certificato individuale</b><span>Ogni cella di carico esce con il proprio certificato di calibrazione</span></div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="h-processo">
+    <div class="sec-head">
+      <h2 id="h-processo" style="max-width:760px">Standard o su misura, seguiamo il progetto dall'inizio alla fine</h2>
+      <a href="https://www.youtube.com/watch?v=pzQ3b7UM4Yc" target="_blank" rel="noopener" style="font-weight:600;white-space:nowrap">Guarda il video sul processo</a>
+    </div>
+    <ol class="steps">
+      <li><b>Analisi dell'applicazione</b><span>Capiamo cosa va misurato, in quali condizioni e con quale precisione.</span></li>
+      <li><b>Scelta o progettazione</b><span>Proponiamo un modello a catalogo o progettiamo una versione dedicata, anche con analisi FEM.</span></li>
+      <li><b>Realizzazione</b><span>Sensore, elettronica analogica o digitale e strumento di lettura come un unico sistema.</span></li>
+      <li><b>Collaudo</b><span>Ogni trasduttore viene caratterizzato e riceve un certificato individuale.</span></li>
+      <li><b>Assistenza</b><span>Manuali, video e supporto remoto dopo l'installazione.</span></li>
+    </ol>
+  </section>
+
+  <section id="applicazioni" class="section white wrap" aria-labelledby="h-app">
+    <div class="sec-head">
+      <h2 id="h-app">Applicazioni</h2>
+      <p>Alcuni esempi di dove lavorano i nostri sensori.</p>
+    </div>
+    <div class="apps">
+      <a class="app" href="#catalogo"><div class="ph">[Foto: telaio tessile]</div><h3>Telai tessili</h3><p>Celle a S e tensiometro TMT per controllare la tensione dei fili e degli orditi.</p></a>
+      <a class="app" href="#prodotto/llt"><div class="ph">[Foto: impianto fotovoltaico]</div><h3>Impianti fotovoltaici</h3><p>Prove di strappo sui pannelli con il tensiometro portatile LLT.</p></a>
+      <a class="app" href="#catalogo"><div class="ph">[Foto: magazzino automatico]</div><h3>Magazzini automatici</h3><p>Celle di carico a colonna della serie AP7000, fino a 100 t.</p></a>
+      <a class="app" href="#catalogo/ascensori"><div class="ph">[Foto: vano ascensore]</div><h3>Ascensori</h3><p>Sensori OT e SR montati sulle singole funi, senza pesi campione.</p></a>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-label="In evidenza">
+    <div class="featured">
+      <a class="feat" href="#prodotto/llt"><div class="pic"><img src="https://www.s2tech.it/wp-content/uploads/2021/09/LLT_princ-1024x768.jpg" alt="Tensiometro portatile LLT"></div><div class="txt"><span class="muted">Prodotto in evidenza</span><h3>LLT, tensiometro portatile</h3><p class="muted">Per funi da 2 a 8 mm, fino a 500 kg, con display integrato e alimentazione a batteria.</p><span class="go">Scopri il prodotto</span></div></a>
+      <a class="feat" href="#contatti"><div class="pic"><img src="https://www.s2tech.it/wp-content/uploads/2023/04/Pitagora-NEW.jpg" alt="Visualizzatore Pitagora"></div><div class="txt"><span class="muted">Novità</span><h3>Pitagora ora legge anche i trasduttori LVDT</h3><p class="muted">Nuova versione per l'acquisizione del segnale da trasduttori LVDT.</p><span class="go">Chiedi informazioni</span></div></a>
+    </div>
+  </section>
+
+  <section id="supporto" class="section white wrap" aria-labelledby="h-supp" style="border-top:1px solid var(--line)">
+    <div class="sec-head"><h2 id="h-supp">Supporto</h2></div>
+    <div class="support">
+      <a href="#catalogo"><b>Schede tecniche</b><span>Ogni prodotto ha specifiche complete, disegni di ingombro e scheda PDF.</span></a>
+      <a href="https://www.youtube.com/channel/UC7tsCCW8Yee4098YOjsYaXg" target="_blank" rel="noopener"><b>Video</b><span>Installazione, configurazione e uso degli strumenti.</span></a>
+      <a href="http://get.teamviewer.com/huhuxdd" target="_blank" rel="noopener"><b>Assistenza remota</b><span>Per i clienti già attivi: un tecnico si collega al tuo PC.</span></a>
+    </div>
+  </section>
+
+  <section class="cta-band wrap">
+    <div>
+      <h2>Hai un'applicazione particolare?</h2>
+      <p>Descrivila in poche righe. Un nostro tecnico ti propone il sensore giusto o una soluzione su misura.</p>
+    </div>
+    <a href="#contatti" class="btn btn-white">Contatta un tecnico</a>
+  </section>
+
+  <section id="contatti" class="section white wrap" aria-labelledby="h-cont">
+    <div class="contact">
+      <div>
+        <h2 id="h-cont" style="font-size:clamp(30px,3.4vw,48px);margin-bottom:18px">Richiedi un preventivo</h2>
+        <p class="muted" style="margin-bottom:24px">Indica cosa devi misurare o i prodotti che ti interessano. Ti rispondiamo con un'offerta tecnica.</p>
+        <p><b>S2Tech srl</b><br>Via Imperia 28, 20142 Milano<br><a href="tel:+39028910142">+39 02 89 101 42</a><br><a href="mailto:info@s2tech.it">info@s2tech.it</a></p>
+        <div id="quoteBox" class="quote-box" hidden></div>
+      </div>
+      <form class="form" id="form" novalidate>
+        <div class="field"><label for="f-nome">Nome e cognome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+        <div class="field"><label for="f-az">Azienda</label><input id="f-az" name="azienda" autocomplete="organization"></div>
+        <div class="field"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-tel">Telefono</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="f-msg">Cosa devi misurare?</label><textarea id="f-msg" name="msg" placeholder="Grandezza, campo di misura, ambiente di installazione, quantità" required></textarea></div>
+        <label class="check full" style="grid-column:1/-1"><input type="checkbox" required> Ho letto l'<a href="https://www.s2tech.it/wp-content/uploads/2026/06/S2T_Informativa-Privacy.pdf" target="_blank" rel="noopener">informativa privacy</a></label>
+        <div class="field full"><button class="btn btn-primary" type="submit">Invia la richiesta</button></div>
+        <p class="note" id="formMsg" role="status" style="grid-column:1/-1"></p>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== CATALOGO ===================== -->
+<div data-page="catalogo">
+  <section class="page-head wrap">
+    <div class="crumbs"><a href="#home">Home</a> / <a href="#catalogo">Prodotti</a><span id="catCrumb"></span></div>
+    <div class="row">
+      <h1 id="catTitle">Prodotti</h1>
+      <p id="catIntro"></p>
+    </div>
+    <nav class="cat-tabs" id="catTabs" aria-label="Categorie"></nav>
+  </section>
+
+  <div class="cat wrap">
+    <aside class="filters" id="filters" aria-label="Filtri"></aside>
+    <div>
+      <div class="results-bar">
+        <div><b class="num" id="rcount">0</b> <span id="rlabel">prodotti</span></div>
+        <div class="field"><label for="ord">Ordina per</label><select id="ord"><option value="name">Nome</option><option value="cap-asc">Portata crescente</option><option value="cap-desc">Portata decrescente</option></select></div>
+      </div>
+      <div class="grid3" id="grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PRODOTTO ===================== -->
+<div data-page="prodotto" id="productPage"></div>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">S2Tech</div>
+      <p>S2Tech srl<br>Via Imperia 28, 20142 Milano</p>
+      <p style="margin-top:10px"><a href="tel:+39028910142" style="color:#fff;display:inline">+39 02 89 101 42</a><br><a href="mailto:info@s2tech.it" style="color:#fff;display:inline">info@s2tech.it</a></p>
+      <p style="margin-top:10px">P.IVA 07144710964</p>
+    </div>
+    <div><h4>Prodotti</h4><a href="#catalogo/forza">Celle di carico</a><a href="#catalogo/tensione">Tensione di funi e fili</a><a href="#catalogo/pressione">Pressione</a><a href="#catalogo/ascensori">Pesatura per ascensori</a><a href="#catalogo">Tutto il catalogo</a></div>
+    <div><h4>Azienda</h4><a href="#azienda">Chi siamo</a><a href="#">Certificazione ISO 9001</a><a href="#">REACH e RoHS</a><a href="#">Conflict minerals policy</a><a href="#">Diventa distributore</a><a href="#">Lavora con noi</a></div>
+    <div><h4>Seguici</h4><a href="https://www.linkedin.com/company/s2tech-srl/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/channel/UC7tsCCW8Yee4098YOjsYaXg" target="_blank" rel="noopener">YouTube</a><a href="https://www.facebook.com/S2Tech-Srl-104209108448792" target="_blank" rel="noopener">Facebook</a></div>
+  </div>
+  <div class="foot-bottom"><a href="https://www.s2tech.it/wp-content/uploads/2026/06/S2T_Informativa-Privacy.pdf" target="_blank" rel="noopener">Privacy policy</a><a href="https://www.iubenda.com/privacy-policy/8253677/cookie-policy" target="_blank" rel="noopener">Cookie policy</a><a href="#">Preferenze privacy</a><span style="margin-left:auto">Anteprima realizzata da Edgar Delishi</span></div>
+</footer>
+
+<script>
+/* =========================================================
+   CATALOGO PRODOTTI
+   Per aggiungere un prodotto: copia un oggetto e modifica i campi.
+   img = foto principale, draw = disegno di ingombro, sheet = scheda PDF
+   ========================================================= */
+var U = 'https://www.s2tech.it/wp-content/uploads/';
+
+var CATEGORIES = [
+  {id:'forza', name:'Celle di carico', tile:'Forza e peso', tileText:'Celle di carico a compressione e trazione, perni di misura, miniaturizzate, a rondella, single point.', intro:'Per misurare forze di compressione, trazione o entrambe, da pochi kg a 50 t. Versioni non amplificate, con amplificatore analogico o con elettronica digitale integrata.'},
+  {id:'tensione', name:'Tensione di funi e fili', tile:'Tensione di funi e fili', tileText:'Tensiometri portatili, celle per il tensionamento di fili, nastri, rulli e calandre.', intro:'Strumenti e sensori per misurare il tiro di funi metalliche, fili e nastri, sul campo o a bordo macchina.'},
+  {id:'pressione', name:'Pressione', tile:'Pressione', tileText:'Trasduttori estensimetrici e ceramici per applicazioni industriali e oleodinamiche.', intro:'Trasduttori di pressione per uso industriale gravoso, con uscita non amplificata o amplificata in tensione e corrente.'},
+  {id:'ascensori', name:'Pesatura per ascensori', tile:'Pesatura per ascensori', tileText:'Sensori di carico da montare sulle singole funi, con taratura senza pesi campione.', intro:'Sensori da installare sulle funi già tensionate per rilevare il carico in cabina, da abbinare all\'elettronica 699Plus.'},
+  {id:'spostamento', name:'Spostamento e livello', tile:'Spostamento e livello', tileText:'LVDT, magnetostrittivi, encoder, sensori laser e a ultrasuoni.', intro:'LVDT, magnetostrittivi, encoder, sensori laser e a ultrasuoni.'},
+  {id:'inclinazione', name:'Inclinazione e accelerazione', tile:'Inclinazione e accelerazione', tileText:'Inclinometri e accelerometri.', intro:'Inclinometri e accelerometri.'}
+];
+
+var COMMON_DIGITAL = 'Con elettronica digitale integrata: convertitore A/D Delta Sigma programmabile fino a 24 bit, banda passante fino a 390 Hz, RS485 Modbus (RTU/ASCII) o CANopen (DS 406), ID di rete configurabile e fino a 32 punti di linearizzazione in EEprom. Più trasduttori possono condividere la stessa linea digitale.';
+var QD_TEXT = 'Il principio di misura è il parallelogramma di flessione, lo stesso delle celle per la pesatura legale: garantisce la massima precisione e l\'insensibilità ai carichi fuori asse, con prestazioni irraggiungibili per le celle a S. Sono state realizzate applicazioni con disassamenti fino a 10 cm senza effetti apprezzabili sulla misura.';
+var CUSTOM = ['Filettature diverse da quella metrica','Trattamenti superficiali e rivestimenti protettivi','Cavi o connettori diversi','Taratura in kg, N, lbf o altre unità'];
+
+var PRODUCTS = [
+  {id:'560qdt', name:'560QDT', sub:'Cella di carico a S', cat:'forza', types:['Trazione e compressione'], capMax:5000,
+   img:U+'2017/06/560QDT_1k_Cable_r.jpg', gallery:[U+'2015/09/Cella-di-carico-a-S-560QDT.jpg'], draw:U+'2017/06/560QDT-Ovearall-DImensions-350_2000Kg.png',
+   sheet:U+'2019/10/Datasheet-560QDT_EN-1.pdf', out:['mV/V','Analogica','Digitale'], ip:'IP65',
+   fs:['±350 kg','±400 kg','±500 kg','±1.000 kg','±2.000 kg','±3.000 kg','±4.000 kg','±5.000 kg'], outputs:['2 mV/V (non amplificata)','0-5 V / ±5 V','0-10 V / ±10 V','4-20 mA','RS485 Modbus','CANopen'], cable:['2 m','5 m','10 m'],
+   lead:'Cella a taglio per trazione e compressione, da ±350 kg a ±5.000 kg. Precisa, robusta e facile da installare, per uso generale in automazione industriale.',
+   hl:['Trazione e compressione da ±350 a ±5.000 kg','Amplificatore analogico o elettronica digitale opzionali','Protezione IP65, marcatura CE','Certificato di calibrazione individuale'],
+   desc:['Il carico si applica tramite due fori filettati coassiali al centro dei piani di appoggio, per l\'accoppiamento diretto con la macchina o con snodi e adattatori sferici. All\'interno c\'è un ponte estensimetrico completo che misura a taglio.','L\'elettronica integrata permette l\'uso in ambienti con forti disturbi elettrici (inverter, attuatori). Per applicazioni a trazione e compressione si può assegnare lo zero a metà della dinamica del segnale, ad esempio 0 kg = 12 mA.','Le versioni non amplificate (2 mV/V) integrano un circuito di calibrazione: si tara l\'elettronica remota (PLC, DAQ, visualizzatore) senza pesi campione e si può verificare periodicamente tutta la catena di misura.','Impieghi tipici: macchine prova materiali, presse, controllo qualità, macchine per ceramica e marmo, montaggio automatico, macchine da stampa, elettromedicali, veicoli, pesatura, gru, limitatori di carico nel sollevamento.'],
+   specs:[['Fondoscala','da ±350 kg a ±5.000 kg'],['Sensibilità nominale','2 mV/V (tip.)'],['Errore totale','± ≤ 0,1% FS'],['Errore di ripetibilità','± ≤ 0,03% FS'],['Errore di ritorno a zero','± ≤ 0,03% FS'],['Effetto della temperatura sullo zero','± ≤ 0,03% FS'],['Sbilanciamento dello zero','2% FS max'],['Impedenza del ponte','350 Ω'],['Alimentazione','10 Vcc/ca, 20 Vcc/ca max'],['Sovraccarico','150% FS'],['Carico di rottura','300% FS (carico allineato)'],['Temperatura di esercizio','da -15 °C a +75 °C'],['Protezione ambientale','IP65 (EN 60529)'],['Uscite analogiche','±5 V, ±10 V, 4-20 mA'],['Uscite digitali','RS485, CANopen'],['Materiale','Acciaio ad alta resistenza']],
+   custom:CUSTOM},
+
+  {id:'lt50', name:'LT50', sub:'Cella di carico a basso profilo', cat:'forza', types:['Trazione e compressione','Alto tonnellaggio'], capMax:50000,
+   img:U+'2016/12/LT50t30.png', gallery:[U+'2016/12/LT50t30-top.png'], draw:U+'2020/10/LD-LT-ingombri-dimensionali-1.png',
+   sheet:U+'2023/09/Datasheet-LD-LT_EN.pdf', out:['mV/V','Analogica','Digitale'], ip:'IP65',
+   fs:['±5 t','±10 t','±20 t','±30 t','±50 t'], outputs:['2 mV/V (non amplificata)','±5 V','±10 V','4-20 mA','RS485 Modbus','CANopen'], cable:['2 m','5 m','10 m','Connettore M12'],
+   lead:'Cella a basso profilo per trazione e compressione da 5 a 50 t, per impianti fissi e mobili.',
+   hl:['Fondoscala da ±5 a ±50 t','Profilo ribassato, fissaggio con foro filettato passante','Ponte anche ridondante per applicazioni di sicurezza','Elettronica analogica o digitale fino a 24 bit integrata'],
+   desc:['Si usa con carichi concentrati o distribuiti su più appoggi: pesatura di silos e piattaforme, forza trasmessa da attuatori, misura indiretta della coppia di argani e motori di sollevamento, macchine per il packaging.','Il carico si applica tramite un foro filettato passante, direttamente sulla macchina o con adattatori specifici. Le protezioni siliconiche sono a loro volta protette dal corpo di misura una volta installata.',COMMON_DIGITAL],
+   specs:[['Fondoscala','±5, ±10, ±20, ±30, ±50 t'],['Sensibilità nominale','2 mV/V (tip.)'],['Errore totale','< ±0,2% FS'],['Errore di ripetibilità','< ±0,07% FS'],['Effetto della temperatura sullo zero','< ±0,07% FS'],['Sbilanciamento dello zero','< ±2% FS'],['Resistenza d\'isolamento','> 5 GΩ'],['Alimentazione raccomandata','10 Vcc/ca'],['Alimentazioni accettate','da 6 a 28 Vcc'],['Limite di carico di sicurezza','150% FS'],['Protezione ambientale','IP65'],['Uscite analogiche','±5 V, ±10 V, 4-20 mA'],['Uscite digitali','RS485 Modbus, CANopen'],['Connessione','cavo 2, 5, 10 m o connettore M12'],['Materiale','Acciaio']],
+   custom:CUSTOM},
+
+  {id:'llt', name:'LLT', sub:'Tensiometro portatile per funi', cat:'tensione', types:['Tensiometri portatili'], capMax:500,
+   img:U+'2021/09/LLT_princ-1024x768.jpg', gallery:[U+'2021/09/LLT_id.jpg'],
+   sheet:U+'2024/02/Datasheet-LLT_EN.pdf', out:['Digitale'], ip:'IP65',
+   fs:['500 kg'], diam:['2 mm','3 mm','4 mm','5 mm','6 mm','8 mm'], outputs:['Display integrato','Bluetooth (opzionale)','USB (opzionale)'],
+   lead:'Tensiometro portatile per misurare il tiro di funi metalliche da 2 a 8 mm di diametro, fino a 500 kg, direttamente sul campo.',
+   hl:['Funi da 2 a 8 mm, carico massimo 500 kg','Display integrato e alimentazione a batteria 9 V','Frequenza di campionamento da 10 a 80 Hz','Si monta e smonta senza attrezzi'],
+   desc:['Le dimensioni compatte permettono l\'installazione anche in spazi ridotti. Il display mostra la misura in tempo reale e i pulsanti permettono di configurare il sistema prima dell\'uso.','Su richiesta sono disponibili interfaccia Bluetooth e porta USB per visualizzare e salvare le misure su PC, e un accelerometro triassiale integrato.','S2Tech sviluppa versioni dedicate, ad esempio per linee vita o per le funi diamantate del taglio della pietra. Si usa anche nelle prove di strappo sugli impianti fotovoltaici.'],
+   specs:[['Tipologia di funi','funi metalliche'],['Diametro fune','da 2 a 8 mm'],['Carico massimo sulla fune','500 kg'],['Precisione','5%'],['Alimentazione','batteria 9 V'],['Frequenza di campionamento','da 10 a 80 Hz'],['Protezione ambientale','IP65'],['Temperatura di esercizio','da -20 °C a +60 °C'],['Opzioni','Bluetooth o USB, accelerometro triassiale']],
+   custom:['Versioni per linee vita','Versioni per funi diamantate','Bluetooth o USB','Accelerometro triassiale integrato']}
+];
+
+/* ========================================================= */
+(function(){
+  var quote = [];
+  var state = {cat:'', f:{type:[], out:[], ip:[]}, q:'', ord:'name'};
+  function $(s){ return document.querySelector(s); }
+  function byId(id){ return PRODUCTS.filter(function(p){ return p.id===id; })[0]; }
+  function catOf(id){ return CATEGORIES.filter(function(c){ return c.id===id; })[0]; }
+  function count(cat){ return PRODUCTS.filter(function(p){ return p.cat===cat; }).length; }
+  function img(src, alt){ return '<img src="'+src+'" alt="'+alt+'" loading="lazy" onerror="this.parentNode.classList.add(\'ph\');this.replaceWith(document.createTextNode(\'[Foto '+alt.replace(/'/g,'')+']\'))">'; }
+  function fsShort(p){ return p.fs.length>1 ? p.fs[0]+' – '+p.fs[p.fs.length-1] : p.fs[0]; }
+
+  /* Home tiles */
+  $('#tiles').innerHTML = CATEGORIES.map(function(c){
+    var n = count(c.id);
+    return '<a class="tile" href="'+(n?'#catalogo/'+c.id:'#catalogo')+'"><div><h3>'+c.tile+'</h3><p>'+c.tileText+'</p></div><div class="tile-foot">'+(n?'<b>In anteprima</b><span>Vedi i sensori</span>':'<b>Nella versione completa</b><span>Catalogo</span>')+'</div></a>';
+  }).join('');
+
+  /* Router */
+  function route(){
+    var h = (location.hash||'#home').slice(1), parts = h.split('/'), page = parts[0];
+    var homeAnchors = ['applicazioni','supporto','azienda','contatti'];
+    closeMenu();
+    if (page==='catalogo'){ if (!fromSearch){ state.q=''; $('#search').value=''; } fromSearch=false; showPage('catalogo'); renderCatalog(parts[1]||''); window.scrollTo(0,0); }
+    else if (page==='prodotto' && byId(parts[1])){ showPage('prodotto'); renderProduct(byId(parts[1])); window.scrollTo(0,0); }
+    else if (homeAnchors.indexOf(page)>-1){ showPage('home'); var el=document.getElementById(page); if(el) setTimeout(function(){ el.scrollIntoView(); },0); }
+    else { showPage('home'); window.scrollTo(0,0); }
+  }
+  function showPage(id){
+    document.querySelectorAll('[data-page]').forEach(function(p){ p.classList.toggle('active', p.dataset.page===id); });
+    var nav = document.querySelector('.mainnav a[data-nav="catalogo"]');
+    if (id!=='home') nav.setAttribute('aria-current','page'); else nav.removeAttribute('aria-current');
+  }
+  window.addEventListener('hashchange', route);
+
+  /* Catalog */
+  function renderCatalog(cat){
+    if (state.cat!==cat){ state.cat=cat; state.f={type:[],out:[],ip:[]}; }
+    var c = catOf(cat);
+    $('#catTitle').textContent = state.q ? 'Risultati per "'+state.q+'"' : (c ? c.name : 'Tutti i prodotti');
+    $('#catIntro').textContent = c ? c.intro : 'Celle di carico, tensiometri, trasduttori di pressione e sensori per ascensori.';
+    $('#catCrumb').textContent = c ? ' / '+c.name : '';
+    $('#catTabs').innerHTML = '<a href="#catalogo" aria-current="'+(!cat)+'">Tutti</a>' + CATEGORIES.filter(function(x){return count(x.id);}).map(function(x){
+      return '<a href="#catalogo/'+x.id+'" aria-current="'+(x.id===cat)+'">'+x.name+' <span class="num" style="opacity:.7;margin-left:6px">'+count(x.id)+'</span></a>'; }).join('');
+    var base = PRODUCTS.filter(function(p){ return !cat || p.cat===cat; });
+    renderFilters(base); renderGrid();
+  }
+  function uniq(list){ var o={}; list.forEach(function(x){ if(x) o[x]=(o[x]||0)+1; }); return o; }
+  function renderFilters(base){
+    var types = uniq([].concat.apply([], base.map(function(p){return p.types;})));
+    var outs = uniq([].concat.apply([], base.map(function(p){return p.out;})));
+    var ips = uniq(base.map(function(p){return p.ip;}));
+    var outLabel = {'mV/V':'Non amplificata (mV/V)','Analogica':'Amplificata analogica','Digitale':'Digitale'};
+    function group(title, key, obj, labels){
+      var keys = Object.keys(obj); if (keys.length<2 && key!=='out') return '';
+      return '<fieldset><legend>'+title+'</legend>'+keys.map(function(k){
+        return '<label class="check"><input type="checkbox" data-f="'+key+'" value="'+k+'"'+(state.f[key].indexOf(k)>-1?' checked':'')+'> '+((labels&&labels[k])||k)+' <span>'+obj[k]+'</span></label>'; }).join('')+'</fieldset>';
+    }
+    $('#filters').innerHTML = group('Tipologia','type',types) + group('Uscita','out',outs,outLabel) + group('Protezione','ip',ips) +
+      '<div class="help-box"><b>Non trovi il sensore giusto?</b><p>Possiamo progettarlo sulla tua applicazione.</p><a href="#contatti" style="font-weight:600">Parla con un tecnico</a></div>';
+    $('#filters').querySelectorAll('input').forEach(function(i){ i.addEventListener('change', function(){
+      var a = state.f[i.dataset.f]; if (i.checked) a.push(i.value); else a.splice(a.indexOf(i.value),1); renderGrid(); }); });
+  }
+  function renderGrid(){
+    var list = PRODUCTS.filter(function(p){
+      if (state.cat && p.cat!==state.cat) return false;
+      if (state.q){ var q=state.q.toLowerCase(); if ((p.name+' '+p.sub+' '+p.lead).toLowerCase().indexOf(q)<0) return false; }
+      if (state.f.type.length && !p.types.some(function(t){return state.f.type.indexOf(t)>-1;})) return false;
+      if (state.f.out.length && !p.out.some(function(t){return state.f.out.indexOf(t)>-1;})) return false;
+      if (state.f.ip.length && state.f.ip.indexOf(p.ip)<0) return false;
+      return true;
+    });
+    var ord = $('#ord').value;
+    list.sort(function(a,b){ return ord==='cap-asc'?a.capMax-b.capMax : ord==='cap-desc'?b.capMax-a.capMax : a.name.localeCompare(b.name,'it',{numeric:true}); });
+    $('#rcount').textContent = list.length; $('#rlabel').textContent = list.length===1?'prodotto':'prodotti';
+    $('#grid').innerHTML = list.length ? list.map(card).join('') + '<div class="empty" style="grid-column:auto;display:flex;flex-direction:column;justify-content:center;gap:10px"><b style="font-size:20px">Versione completa</b><span class="muted">Qui troveranno posto tutti i prodotti del catalogo S2Tech, con specifiche, disegni e schede tecniche.</span></div>' : '<div class="empty">Nessun prodotto corrisponde ai filtri. Togli un filtro oppure <a href="#contatti">chiedi a un tecnico</a>.</div>';
+    bindAdd($('#grid'));
+  }
+  function card(p){
+    var inQ = quote.some(function(q){return q.id===p.id;});
+    return '<article class="card"><a href="#prodotto/'+p.id+'" class="pic" tabindex="-1" aria-hidden="true">'+img(p.img,p.name)+'</a><div class="card-body"><span class="card-type">'+p.sub+'</span><h3><a href="#prodotto/'+p.id+'">'+p.name+'</a></h3>'+
+      '<dl class="specs"><dt>Portata</dt><dd>'+fsShort(p)+'</dd><dt>Uscita</dt><dd>'+p.out.join(', ')+'</dd>'+(p.ip?'<dt>Protezione</dt><dd>'+p.ip+'</dd>':'')+'</dl>'+
+      '<div class="card-actions"><a href="#prodotto/'+p.id+'" class="btn btn-outline">Dettagli</a><button class="btn '+(inQ?'btn-outline':'btn-primary')+'" data-add="'+p.id+'">'+(inQ?'Aggiunto':'Al preventivo')+'</button></div></div></article>';
+  }
+  function bindAdd(root){
+    root.querySelectorAll('[data-add]').forEach(function(b){ b.addEventListener('click', function(){
+      var p = byId(b.dataset.add), i = quote.findIndex(function(q){return q.id===p.id;});
+      if (i>-1) quote.splice(i,1); else quote.push({id:p.id, name:p.name, qty:1, cfg:''});
+      renderQuote(); b.textContent = i>-1?'Al preventivo':'Aggiunto'; b.className = 'btn '+(i>-1?'btn-primary':'btn-outline');
+    }); });
+  }
+  $('#ord').addEventListener('change', renderGrid);
+  var fromSearch = false;
+  $('#searchForm').addEventListener('submit', function(e){ e.preventDefault(); state.q = $('#search').value.trim(); state.cat='x'; fromSearch = true;
+    if (location.hash==='#catalogo'){ fromSearch=false; renderCatalog(''); } else { location.hash = '#catalogo'; } });
+  $('#search').addEventListener('search', function(){ if(!this.value){ state.q=''; } });
+
+  /* Product */
+  function renderProduct(p){
+    var c = catOf(p.cat);
+    var pics = [p.img].concat(p.gallery||[]).concat(p.draw?[p.draw]:[]);
+    var sel = function(id,label,opts){ return opts&&opts.length>1 ? '<div class="field"><label for="'+id+'">'+label+'</label><select id="'+id+'">'+opts.map(function(o){return '<option>'+o+'</option>';}).join('')+'</select></div>' : ''; };
+    var key = [['Portata',fsShort(p)],['Errore totale',(p.specs.filter(function(s){return /^Errore( totale)?$/.test(s[0]) || s[0]==='Errore totale tipico' || s[0]==='Precisione';})[0]||['','su richiesta'])[1]],['Protezione',p.ip||'su richiesta'],['Uscita',p.out.join(', ')]];
+    var rel = PRODUCTS.filter(function(x){return x.cat===p.cat && x.id!==p.id;}).slice(0,3);
+    var inQ = quote.some(function(q){return q.id===p.id;});
+    $('#productPage').innerHTML =
+    '<section class="prod-top wrap"><div class="crumbs"><a href="#home">Home</a> / <a href="#catalogo">Prodotti</a> / <a href="#catalogo/'+c.id+'">'+c.name+'</a> / '+p.name+'</div>'+
+    '<div class="prod"><div class="gallery"><div class="pic main" id="mainPic">'+img(pics[0],p.name)+'</div>'+
+      (pics.length>1?'<div class="thumbs">'+pics.map(function(s,i){return '<button type="button" aria-pressed="'+(i===0)+'" data-src="'+s+'" aria-label="'+(s===p.draw?'Disegno di ingombro':'Foto '+(i+1))+'"><img src="'+s+'" alt=""></button>';}).join('')+'</div>':'')+
+    '</div><div class="prod-info"><div><p class="muted" style="margin-bottom:10px">'+p.sub+'</p><h1 style="margin-bottom:14px">'+p.name+'</h1><p class="lead">'+p.lead+'</p></div>'+
+      '<ul class="highlights">'+p.hl.map(function(h){return '<li>'+h+'</li>';}).join('')+'</ul>'+
+      '<div class="keyspecs">'+key.map(function(k){return '<div><small>'+k[0]+'</small><b>'+k[1]+'</b></div>';}).join('')+'</div>'+
+      '<div class="config">'+sel('cfgFs','Fondoscala',p.fs)+sel('cfgDiam','Diametro fune',p.diam)+sel('cfgOut','Uscita',p.outputs)+sel('cfgCable','Connessione',p.cable)+'</div>'+
+      '<div class="add-row"><div class="field"><label for="qty">Quantità</label><input id="qty" type="number" value="1" min="1"></div><button class="btn '+(inQ?'btn-outline':'btn-primary')+'" id="addBtn" type="button">'+(inQ?'Aggiunto alla richiesta':'Aggiungi alla richiesta di preventivo')+'</button></div>'+
+      '<div class="added" id="addedMsg" role="status"'+(inQ?'':' hidden')+'>'+p.name+' è nella tua richiesta di preventivo. <a href="#contatti" style="font-weight:700">Completa la richiesta</a> oppure continua ad aggiungere prodotti.</div>'+
+      '<div class="downloads">'+(p.sheet?'<a href="'+p.sheet+'" target="_blank" rel="noopener">Scarica la scheda tecnica (PDF)</a>':'<a href="#contatti">Richiedi la scheda tecnica</a>')+(p.draw?'<a href="'+p.draw+'" target="_blank" rel="noopener">Disegno di ingombro</a>':'')+'</div>'+
+      '<p class="note">Nessun acquisto online: riceverai un\'offerta tecnica da S2Tech.</p>'+
+    '</div></div></section>'+
+    '<section class="section wrap"><div class="tabs" role="tablist">'+
+      tab('desc','Descrizione',true)+tab('spec','Caratteristiche tecniche')+(p.draw?tab('dim','Dimensioni'):'')+tab('ord','Come ordinare')+'</div>'+
+      '<div class="tabpanel" id="panel-desc" role="tabpanel">'+p.desc.map(function(d){return '<p>'+d+'</p>';}).join('')+'</div>'+
+      '<div class="tabpanel" id="panel-spec" role="tabpanel" hidden><table class="spec-table"><tbody>'+p.specs.map(function(s){return '<tr><th scope="row">'+s[0]+'</th><td>'+s[1]+'</td></tr>';}).join('')+'</tbody></table></div>'+
+      (p.draw?'<div class="tabpanel" id="panel-dim" role="tabpanel" hidden><div class="drawing">'+img(p.draw,'Disegno di ingombro '+p.name)+'</div></div>':'')+
+      '<div class="tabpanel" id="panel-ord" role="tabpanel" hidden><p>Scegli fondoscala e uscita, aggiungi il prodotto alla richiesta di preventivo e invia il modulo: un tecnico ti risponde con l\'offerta e ti aiuta a scegliere la versione giusta. Puoi anche scrivere a <a href="mailto:info@s2tech.it">info@s2tech.it</a>.</p>'+
+        (p.custom?'<p style="margin-top:18px"><b>Possiamo realizzarlo anche con:</b></p><ul class="highlights" style="margin-top:10px">'+p.custom.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>':'')+'</div>'+
+    '</section>'+
+    (rel.length?'<section class="wrap" style="padding-bottom:96px"><h2 style="font-size:36px;margin-bottom:24px">Prodotti correlati</h2><div class="rel">'+rel.map(function(r){return '<a href="#prodotto/'+r.id+'"><div class="pic">'+img(r.img,r.name)+'</div><div><b>'+r.name+'</b><span>'+r.sub+', '+fsShort(r)+'</span></div></a>';}).join('')+'</div></section>':'');
+
+    function tab(id,label,on){ return '<button role="tab" type="button" aria-selected="'+(!!on)+'" aria-controls="panel-'+id+'" data-tab="'+id+'">'+label+'</button>'; }
+    document.querySelectorAll('.tabs button').forEach(function(b){ b.addEventListener('click', function(){
+      document.querySelectorAll('.tabs button').forEach(function(x){ x.setAttribute('aria-selected', x===b); });
+      document.querySelectorAll('.tabpanel').forEach(function(pn){ pn.hidden = pn.id!=='panel-'+b.dataset.tab; });
+    }); });
+    document.querySelectorAll('.thumbs button').forEach(function(t){ t.addEventListener('click', function(){
+      document.querySelectorAll('.thumbs button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+      t.setAttribute('aria-pressed','true'); $('#mainPic').innerHTML = img(t.dataset.src, p.name);
+    }); });
+    $('#addBtn').addEventListener('click', function(){
+      var i = quote.findIndex(function(q){return q.id===p.id;});
+      if (i>-1){ quote.splice(i,1); }
+      else {
+        var cfg = ['cfgFs','cfgDiam','cfgOut','cfgCable'].map(function(id){ var e=document.getElementById(id); return e?e.value:''; }).filter(Boolean).join(', ');
+        quote.push({id:p.id, name:p.name, qty:Math.max(1,parseInt($('#qty').value,10)||1), cfg:cfg});
+      }
+      var added = i===-1;
+      this.textContent = added?'Aggiunto alla richiesta':'Aggiungi alla richiesta di preventivo';
+      this.className = 'btn '+(added?'btn-outline':'btn-primary');
+      $('#addedMsg').hidden = !added; renderQuote();
+    });
+  }
+
+  /* Quote list */
+  function renderQuote(){
+    $('#qcount').textContent = quote.length;
+    var box = $('#quoteBox');
+    if (!quote.length){ box.hidden = true; return; }
+    box.hidden = false;
+    box.innerHTML = '<b>Prodotti nella richiesta</b><ul>'+quote.map(function(q,i){
+      return '<li><span><b>'+q.name+'</b> x '+q.qty+(q.cfg?'<br><span class="muted">'+q.cfg+'</span>':'')+'</span><button type="button" data-rm="'+i+'">Rimuovi</button></li>'; }).join('')+'</ul>';
+    box.querySelectorAll('[data-rm]').forEach(function(b){ b.addEventListener('click', function(){ quote.splice(+b.dataset.rm,1); renderQuote(); }); });
+  }
+
+  /* Menu */
+  var menuBtn = $('#menuBtn'), nav = $('#mainnav');
+  function closeMenu(){ nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Apri menu'); }
+  menuBtn.addEventListener('click', function(){ var o = nav.classList.toggle('open'); menuBtn.setAttribute('aria-expanded',o); menuBtn.setAttribute('aria-label',o?'Chiudi menu':'Apri menu'); });
+
+  /* Form (demo, non invia) */
+  $('#form').addEventListener('submit', function(e){
+    e.preventDefault(); var f=e.target, m=$('#formMsg');
+    if (!f.checkValidity()){ m.textContent='Compila nome, email e descrizione e accetta l\'informativa privacy.'; return; }
+    m.textContent='Questa è un\'anteprima: il modulo sarà attivo nella versione completa.';
+  });
+
+  route();
+})();
+</script>
+</body>
+</html>
